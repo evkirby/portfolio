@@ -1,10 +1,14 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { useParams } from 'react-router';
-import ExploreContainer from '../components/ExploreContainer';
-import './Page.css';
+import React from "react";
+
+import {
+  IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar,
+} from "@ionic/react";
+import { useParams } from "react-router";
+
+import ExploreContainer from "../components/ExploreContainer";
+import "./Page.css";
 
 export default function Page() {
-
   const { name } = useParams<{ name: string; }>();
 
   return (
@@ -28,4 +32,4 @@ export default function Page() {
       </IonContent>
     </IonPage>
   );
-};
+}
