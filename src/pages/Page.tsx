@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import ExploreContainer from '../components/ExploreContainer';
 import './Page.css';
 
-const Page: React.FC = () => {
+export default function Page() {
 
   const { name } = useParams<{ name: string; }>();
 
@@ -29,5 +29,3 @@ const Page: React.FC = () => {
     </IonPage>
   );
 };
-
-export default Page;
