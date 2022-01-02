@@ -13,3 +13,12 @@ window.matchMedia = window.matchMedia || function () {
     removeListener() {},
   };
 };
+
+jest.mock("react-i18next", () => ({
+  useTranslation: (_: string, options?: { keyPrefix: string }) => ({
+    t: (key: string) => `${options?.keyPrefix || ""}.${key}`,
+    i18n: {
+      changeLanguage: () => new Promise(() => {}),
+    },
+  }),
+}));

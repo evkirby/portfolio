@@ -1,0 +1,19 @@
+{
+    "projects": {
+        "madladle": {
+            "example": "Example"
+        },
+        "birreco": {
+            "example": "Example"
+        }
+    },
+    "menu": {
+        "header": "Pages",
+        "welcome": "Welcome!",
+        "projects": "Projects",
+        "about": "About Me"
+    },
+    "about": {
+        "example": "Example"
+    }
+}

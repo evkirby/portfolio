@@ -14,6 +14,7 @@ import {
 import {
   mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp,
 } from "ionicons/icons";
+import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
 import "./Menu.css";
 
@@ -24,29 +25,31 @@ interface AppPage {
   title: string;
 }
 
-const appPages: AppPage[] = [
-  {
-    title: "Projects",
-    url: "/page/Projects",
-    iosIcon: mailOutline,
-    mdIcon: mailSharp,
-  },
-  {
-    title: "About Me",
-    url: "/page/About",
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp,
-  },
-];
 export default function Menu() {
   const location = useLocation();
+  const { t } = useTranslation("", { keyPrefix: "menu" });
+
+  const appPages: AppPage[] = [
+    {
+      title: t("projects"),
+      url: "/page/Projects",
+      iosIcon: mailOutline,
+      mdIcon: mailSharp,
+    },
+    {
+      title: t("about"),
+      url: "/page/About",
+      iosIcon: paperPlaneOutline,
+      mdIcon: paperPlaneSharp,
+    },
+  ];
 
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>{t("header")}</IonListHeader>
+          <IonNote>{t("welcome")}</IonNote>
           {appPages.map((appPage) => (
             <IonMenuToggle key={appPage.title} autoHide={false}>
               <IonItem className={location.pathname === appPage.url ? "selected" : ""} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>

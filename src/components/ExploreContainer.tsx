@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./ExploreContainer.css";
 import { createUseStyles } from "react-jss";
 
 interface ContainerProps {
