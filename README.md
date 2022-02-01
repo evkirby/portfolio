@@ -1,3 +1,5 @@
+# WIP: Still in early stage of development
+
 # portfolio
 
 A showcase of some of my projects. Built with Ionic and React
